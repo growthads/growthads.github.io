@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GrowthAds | Google Ads Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#ffffff;
+color:#0d1b2a;
+overflow-x:hidden;
+}
+
+.container{
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+nav{
+height:80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:sticky;
+top:0;
+background:#fff;
+z-index:1000;
+border-bottom:1px solid #eef2f7;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+height:54px;
+width:auto;
+object-fit:contain;
+}
+
+.logo-text h2{
+font-size:28px;
+font-weight:800;
+line-height:1;
+}
+
+.logo-text span{
+color:#1a73e8;
+}
+
+.logo-text p{
+font-size:14px;
+color:#6b7280;
+margin-top:4px;
+}
+
+.cta-nav{
+background:#0f4ed8;
+color:#fff;
+padding:14px 22px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s ease;
+}
+
+.cta-nav:hover{
+background:#0b3fb3;
+}
+
+.hero{
+padding:80px 0 40px;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:40px;
+align-items:center;
+}
+
+.hero-left h1{
+font-size:58px;
+line-height:1.05;
+font-weight:800;
+margin-bottom:24px;
+max-width:620px;
+}
+
+.hero-left h1 span{
+color:#1a73e8;
+}
+
+.hero-left p{
+font-size:18px;
+line-height:1.8;
+color:#5c677d;
+max-width:580px;
+margin-bottom:32px;
+}
+
+.feature-list{
+display:flex;
+flex-direction:column;
+gap:18px;
+margin-bottom:34px;
+}
+
+.feature-item{
+display:flex;
+align-items:center;
+gap:14px;
+font-size:18px;
+font-weight:500;
+}
+
+.feature-item .icon{
+width:42px;
+height:42px;
+border-radius:50%;
+background:#e8f1ff;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#1a73e8;
+font-size:20px;
+font-weight:700;
+flex-shrink:0;
+}
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:16px;
+margin-top:30px;
+width:100%;
+overflow:visible;
+
+}
+
+.metric-card{
+min-width:0;
+background:#fff;
+border:1px solid #edf2f7;
+border-radius:18px;
+padding:22px;
+box-shadow:0 8px 30px rgba(0,0,0,0.05);
+}
+
+.metric-card h4{
+font-size:14px;
+color:#6b7280;
+margin-bottom:10px;
+}
+
+.metric-card h2{
+font-size:34px;
+margin-bottom:12px;
+}
+
+.metric-card .green{
+color:#14b86e;
+font-size:14px;
+font-weight:700;
+}
+
+.graph-line{
+height:48px;
+margin-top:14px;
+background:linear-gradient(180deg, rgba(26,115,232,0.08), transparent);
+border-radius:10px;
+position:relative;
+overflow:hidden;
+}
+
+.graph-line::after{
+content:'';
+position:absolute;
+left:0;
+top:50%;
+width:100%;
+height:2px;
+background:#1a73e8;
+transform:skewY(-8deg);
+}
+
+.hero-right{
+position:relative;
+}
+
+.cta-box{
+background:linear-gradient(135deg,#0f4ed8,#1a73e8);
+padding:42px 34px;
+border-radius:28px;
+color:#fff;
+box-shadow:0 20px 60px rgba(26,115,232,0.25);
+position:relative;
+overflow:hidden;
+}
+
+.cta-box::before{
+content:'';
+position:absolute;
+width:220px;
+height:220px;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+right:-80px;
+top:-80px;
+}
+
+.cta-box h3{
+font-size:36px;
+line-height:1.2;
+margin-bottom:20px;
+position:relative;
+}
+
+.cta-box p{
+font-size:17px;
+line-height:1.7;
+opacity:0.92;
+margin-bottom:30px;
+position:relative;
+}
+
+.cta-btn{
+display:inline-block;
+background:#fff;
+color:#0f4ed8;
+padding:16px 24px;
+text-decoration:none;
+font-weight:700;
+border-radius:14px;
+transition:0.3s ease;
+position:relative;
+}
+
+.cta-btn:hover{
+transform:translateY(-2px);
+}
+
+.dashboard-image{
+margin-top:30px;
+width:100%;
+border-radius:22px;
+box-shadow:0 15px 50px rgba(0,0,0,0.08);
+}
+
+.section{
+padding:90px 0;
+}
+
+.section-light{
+background:#f7faff;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.section-subtitle{
+text-align:center;
+max-width:720px;
+margin:0 auto 60px;
+color:#667085;
+font-size:18px;
+line-height:1.8;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:26px;
+}
+
+.card{
+background:#fff;
+padding:34px;
+border-radius:24px;
+box-shadow:0 10px 40px rgba(0,0,0,0.04);
+transition:0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card-icon{
+width:72px;
+height:72px;
+border-radius:50%;
+background:#eaf2ff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:#1a73e8;
+margin-bottom:24px;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:14px;
+}
+
+.card p{
+color:#667085;
+line-height:1.8;
+}
+
+.final-cta{
+background:linear-gradient(135deg,#0f4ed8,#1a73e8);
+color:#fff;
+padding:70px 40px;
+border-radius:34px;
+text-align:center;
+}
+
+.final-cta h2{
+font-size:44px;
+margin-bottom:20px;
+}
+
+.final-cta p{
+font-size:18px;
+max-width:720px;
+margin:auto;
+line-height:1.8;
+opacity:0.92;
+margin-bottom:32px;
+}
+
+footer{
+padding:40px 0;
+text-align:center;
+color:#667085;
+font-size:15px;
+}
+
+@media(max-width:992px){
+.hero-grid{
+grid-template-columns:1fr;
+}
+
+.hero-left h1{
+font-size:48px;
+}
+
+.cards{
+grid-template-columns:1fr 1fr;
+}
+}
+
+@media(max-width:768px){
+nav{
+padding:0 20px;
+height:74px;
+}
+
+.logo img{
+height:44px;
+}
+
+.logo-text h2{
+font-size:24px;
+}
+
+.hero{
+padding:50px 0 20px;
+}
+
+.hero-left h1{
+font-size:40px;
+}
+
+.hero-left p{
+font-size:17px;
+}
+
+.metrics{
+display:grid !important;
+grid-template-columns:1fr !important;
+gap:14px;
+width:100%;
+}
+.metric-card{
+display:block !important;
+width:100%;
+}
+
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.final-cta h2{
+font-size:34px;
+}
+
+.cta-box{
+padding:34px 26px;
+}
+}
+
+@media(max-width:520px){
+.hero-left h1{
+font-size:34px;
+}
+
+.feature-item{
+font-size:16px;
+}
+
+.cta-box h3{
+font-size:30px;
+}
+
+.cta-nav{
+display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="container">
+<div class="logo">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="GrowthAds Logo">
+<div class="logo-text">
+<h2>Growth<span>Ads</span></h2>
+<p>Google Ads Expert</p>
+</div>
+</div>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScbYmKM3qJpJgStCifAZ9AS9iw4v_AU66K6L6HOY9HLz-ITJQ/viewform?usp=header" class="cta-nav" target="_blank">
+Free Google Ads Strategy Call
+</a>
+</nav>
+
+<section class="hero">
+<div class="container hero-grid">
+
+<div class="hero-left">
+<h1>
+Get More Leads from <span>Google Ads</span> That Actually Convert
+</h1>
+
+<p>
+I help small businesses turn ad spend into real calls and customers using structured Google Ads campaigns focused on conversions, clarity, and long-term growth.
+</p>
+
+<div class="feature-list">
+<div class="feature-item">
+<div class="icon">✓</div>
+<span>Conversion Focused</span>
+</div>
+
+<div class="feature-item">
+<div class="icon">✓</div>
+<span>Data-Driven Approach</span>
+</div>
+
+<div class="feature-item">
+<div class="icon">✓</div>
+<span>Transparent & Reliable</span>
+</div>
+
+<div class="feature-item">
+<div class="icon">✓</div>
+<span>ROI Driven Strategy</span>
+</div>
+</div>
+
+<div class="metrics">
+<div class="metric-card">
+<h4>Conversions</h4>
+<h2>128</h2>
+<div class="green">↑ 32%</div>
+<div class="graph-line"></div>
+</div>
+
+<div class="metric-card">
+<h4>Clicks</h4>
+<h2>1,846</h2>
+<div class="green">↑ 22%</div>
+<div class="graph-line"></div>
+</div>
+
+<div class="metric-card">
+<h4>Cost / Conv.</h4>
+<h2>₹142</h2>
+<div class="green">↓ 20%</div>
+<div class="graph-line"></div>
+</div>
+</div>
+</div>
+
+<div class="hero-right">
+<div class="cta-box">
+<h3>Free Google Ads Strategy Call</h3>
+
+<p>
+We will review your request and get back within 24 hours.
+</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScbYmKM3qJpJgStCifAZ9AS9iw4v_AU66K6L6HOY9HLz-ITJQ/viewform?usp=header" class="cta-btn" target="_blank">
+Book Free Strategy Call
+</a>
+</div>
+
+<img class="dashboard-image" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" alt="GrowthAds Dashboard">
+</div>
+</div>
+</section>
+
+<section class="section section-light">
+<div class="container">
+
+<h2 class="section-title">Are Your Ads Not Delivering Results?</h2>
+<p class="section-subtitle">
+Many businesses spend money on ads without understanding why leads are inconsistent or why clicks are not converting into real customers.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">💸</div>
+<h3>Spending Money, No Leads</h3>
+<p>
+Running campaigns without proper targeting often leads to wasted budget and low-quality traffic.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">📈</div>
+<h3>Getting Clicks, Not Customers</h3>
+<p>
+Clicks alone do not matter if campaigns are not optimized for conversions and business goals.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">❓</div>
+<h3>Not Sure What’s Going Wrong</h3>
+<p>
+Without tracking and structure, it becomes difficult to understand what is actually working.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+
+<h2 class="section-title">How I Help You</h2>
+<p class="section-subtitle">
+Every campaign is built around intent, conversion tracking, and scalable growth strategies.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">🎯</div>
+<h3>Keyword Targeting</h3>
+<p>
+Target high-intent search queries that are more likely to convert into real business inquiries.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">⚙️</div>
+<h3>Campaign Optimization</h3>
+<p>
+Improve ad performance continuously through testing, optimization, and cleaner campaign structure.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">📊</div>
+<h3>Conversion Tracking</h3>
+<p>
+Implement proper tracking using GTM and GA4 to measure real business performance.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section section-light">
+<div class="container">
+
+<h2 class="section-title">Why Work With Me?</h2>
+<p class="section-subtitle">
+Focused on clarity, transparency, and campaigns built with long-term performance in mind.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">🚀</div>
+<h3>Results Focused</h3>
+<p>
+Campaigns are structured around lead generation and measurable outcomes.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">📉</div>
+<h3>Data-Driven Decisions</h3>
+<p>
+Every optimization decision is based on campaign insights and actual performance data.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🛡️</div>
+<h3>Transparent Approach</h3>
+<p>
+Clear communication, structured reporting, and no unnecessary complexity.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="final-cta">
+<h2>Ready to Grow Your Business?</h2>
+
+<p>
+Book your free strategy call and discover how a structured Google Ads campaign can help bring more qualified leads to your business.
+</p>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScbYmKM3qJpJgStCifAZ9AS9iw4v_AU66K6L6HOY9HLz-ITJQ/viewform?usp=header" class="cta-btn" target="_blank">
+Book Free Strategy Call
+</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+© 2026 GrowthAds. All Rights Reserved.
+</div>
+</footer>
+
+</body>
+</html>
+
+
